@@ -28,7 +28,7 @@ import amidst.parsing.json.JsonReader;
 
 @Immutable
 public class PlayerInformationService {
-	private static final WorldIconImage DEFAULT_HEAD = DefaultWorldIconTypes.PLAYER.getImage();
+	//private static final WorldIconImage DEFAULT_HEAD = DefaultWorldIconTypes.PLAYER.getImage();
 
 	private static final String SIMPLE_PLAYER_SKIN_URL = "http://s3.amazonaws.com/MinecraftSkins/";
 	private static final String PLAYERNAME_TO_UUID = "https://api.mojang.com/users/profiles/minecraft/";
@@ -44,10 +44,10 @@ public class PlayerInformationService {
 			if (head.isPresent()) {
 				return new PlayerInformation(player.getId(), player.getName(), head.get());
 			} else {
-				return new PlayerInformation(player.getId(), player.getName(), DEFAULT_HEAD);
+				return new PlayerInformation(player.getId(), player.getName());
 			}
 		} else {
-			return new PlayerInformation(uuid, null, DEFAULT_HEAD);
+			return new PlayerInformation(uuid, null);
 		}
 	}
 
@@ -65,7 +65,7 @@ public class PlayerInformationService {
 				if (head.isPresent()) {
 					return new PlayerInformation(player.getId(), player.getName(), head.get());
 				} else {
-					return new PlayerInformation(player.getId(), player.getName(), DEFAULT_HEAD);
+					return new PlayerInformation(player.getId(), player.getName());
 				}
 			}
 		} else {
@@ -73,7 +73,7 @@ public class PlayerInformationService {
 			if (head.isPresent()) {
 				return new PlayerInformation(null, name, head.get());
 			} else {
-				return new PlayerInformation(null, name, DEFAULT_HEAD);
+				return new PlayerInformation(null, name);
 			}
 		}
 	}

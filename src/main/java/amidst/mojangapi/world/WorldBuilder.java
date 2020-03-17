@@ -47,6 +47,11 @@ public class WorldBuilder {
 		this.playerInformationProvider = playerInformationProvider;
 		this.seedHistoryLogger = seedHistoryLogger;
 	}
+	
+	public WorldBuilder(SeedHistoryLogger seedHistoryLogger) {
+		this.playerInformationProvider = null;
+		this.seedHistoryLogger = seedHistoryLogger;
+	}
 
 	public World from(
 			MinecraftInterface minecraftInterface,

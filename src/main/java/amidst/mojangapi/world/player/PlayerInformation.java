@@ -27,6 +27,12 @@ public class PlayerInformation {
 		this.name = name;
 		this.head = head;
 	}
+	
+	public PlayerInformation(String uuid, String name) {
+		this.head = null;
+		this.uuid = uuid;
+		this.name = name;
+	}
 
 	public String getUUID() {
 		return uuid;

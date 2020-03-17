@@ -1,0 +1,21 @@
+# Paths should be specified using forward-slashes (even on Windows), or escaped
+# back-slashes (double back-slashes). 
+# Directory paths MUST end with a slash.
+
+# Path to a directory where minecraft versions can be stored.
+# The devtools will also download new minecraft versions into this directory.
+amidst.devtools.directory.versions=/home/lukas/.minecraft/versions/
+
+# Path to the directory where minecraft stores its libraries. This is currently use readonly.
+# When the devtools fail to run this might be related to a missing library.
+# To fix this issue, start the corresponding minecraft version via the minecraft launcher.
+# This will download the required libraries.
+amidst.devtools.directory.libraries=/home/lukas/.minecraft/libraries/
+
+# Path to the directory where the biome color images are saved.
+# This directory will not be created if it does not exist.
+amidst.devtools.directory.biome.color.images=/home/lukas/Desktop/seedPics/
+
+# Path to the directory where performance measurements are stored.
+# This directory will not be created if it does not exist.
+amidst.devtools.directory.performance=/home/lukas/Desktop/seedPics/perf/

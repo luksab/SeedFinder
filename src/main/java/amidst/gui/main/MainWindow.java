@@ -18,6 +18,8 @@ import amidst.gui.main.viewer.ViewerFacade;
 import amidst.gui.seedsearcher.SeedSearcherWindow;
 import amidst.logging.AmidstLogger;
 import amidst.mojangapi.world.WorldOptions;
+import amidst.mojangapi.world.WorldSeed;
+import amidst.mojangapi.world.WorldType;
 
 @NotThreadSafe
 public class MainWindow {
@@ -40,7 +42,9 @@ public class MainWindow {
 				 Optional<WorldOptions> initialWorldOptions) {
 		frame.setSize(1000, 800);
 		frame.setIconImages(metadata.getIcons());
-		frame.setTitle(versionString);
+		//frame.setTitle(versionString);
+		frame.setTitle("UwU");
+		System.out.println();
 		frame.setJMenuBar(menuBar.getMenuBar());
 		frame.getContentPane().setLayout(new BorderLayout());
 		frame.addWindowListener(new WindowAdapter() {
@@ -51,6 +55,8 @@ public class MainWindow {
 		});
 		frame.setVisible(true);
 		worldSwitcher.clearWorld();
+		WorldOptions worldOptions = new WorldOptions(WorldSeed.random(), WorldType.from("Default"));
+		worldSwitcher.displayWorld(worldOptions);
 		initialWorldOptions.ifPresent(options -> {
             AmidstLogger.info("Setting initial world options to [" + options.getWorldSeed().getLabel() + ", World Type: " + options.getWorldType() + "]");
             worldSwitcher.displayWorld(options);
